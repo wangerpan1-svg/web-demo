@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科技有限公司 - 首页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei",sans‑serif;
+        }
+        /* 头部导航 */
+        .top-bar{
+            background:#0F5499;
+            color:#fff;
+            padding:8px 5%;
+            display:flex;
+            justify-content:space-between;
+            font-size:14px;
+        }
+        .header-nav{
+            background:#ffffff;
+            box-shadow:0 2px 6px rgba(0,0,0,0.1);
+            padding:0 5%;
+            display:flex;
+            align-items:center;
+            height:70px;
+        }
+        .logo{
+            font-size:24px;
+            font-weight:bold;
+            color:#0F5499;
+            margin-right:60px;
+        }
+        .nav-menu a{
+            display:inline‑block;
+            padding:0 22px;
+            height:70px;
+            line‑height:70px;
+            text‑decoration:none;
+            color:#333;
+            font‑size:16px;
+        }
+        .nav-menu a:hover,.nav-menu a.active{
+            background:#0F5499;
+            color:#fff;
+        }
+
+        /* 轮播横幅 纯色模拟大图 */
+        .banner{
+            height:380px;
+            background:linear-gradient(120deg,#0F5499,#2472c2);
+            color:#fff;
+            display:flex;
+            flex‑direction:column;
+            align‑items:center;
+            justify‑content:center;
+        }
+        .banner h1{
+            font‑size:42px;
+            margin‑bottom:14px;
+        }
+        .banner p{
+            font‑size:18px;
+            opacity:0.9;
+        }
+
+        /* 通用区块 */
+        .container{
+            width:90%;
+            margin:60px auto;
+        }
+        .section‑title{
+            text‑align:center;
+            margin‑bottom:42px;
+        }
+        .section‑title h2{
+            font‑size:30px;
+            color:#222;
+            margin‑bottom:10px;
+        }
+        .section‑title .line{
+            width:70px;
+            height:3px;
+            background:#0F5499;
+            margin:0 auto;
+        }
+
+        /* 关于我们 */
+        .about-wrap{
+            display:grid;
+            grid‑template‑columns:1fr 1fr;
+            gap:40px;
+            align‑items:center;
+        }
+        .about‑text h3{
+            color:#0F5499;
+            margin‑bottom:16px;
+            font‑size:22px;
+        }
+        .about‑text p{
+            line‑height:1.8;
+            color:#555;
+            margin‑bottom:12px;
+        }
+        .about‑bg{
+            height:280px;
+            background:#e8f1fa;
+            border‑radius:8px;
+        }
+
+        /* 服务模块 4卡片 */
+        .service‑list{
+            display:grid;
+            grid‑template‑columns:repeat(4,1fr);
+            gap:24px;
+        }
+        .service‑item{
+            border:1px solid #eee;
+            padding:28px 20px;
+            text‑align:center;
+            transition:0.3s;
+        }
+        .service‑item:hover{
+            background:#0F5499;
+            color:#fff;
+        }
+        .service‑item h4{
+            font‑size:18px;
+            margin‑bottom:12px;
+        }
+        .service‑item p{
+            font‑size:14px;
+            line‑height:1.7;
+            color:#666;
+        }
+        .service‑item:hover p{
+            color:#fff;
+        }
+
+        /* 项目案例 */
+        .case‑list{
+            display:grid;
+            grid‑template‑columns:repeat(3,1fr);
+            gap:24px;
+        }
+        .case‑item{
+            border:1px solid #eee;
+        }
+        .case‑img{
+            height:180px;
+            background:#d7e5f5;
+        }
+        .case‑info{
+            padding:16px;
+        }
+        .case‑info h4{
+            margin‑bottom:8px;
+            color:#222;
+        }
+        .case‑info p{
+            font‑size:14px;
+            color:#666;
+        }
+
+        /* 新闻资讯 */
+        .news‑wrap{
+            display:grid;
+            grid‑template‑columns:1fr 1fr;
+            gap:30px;
+        }
+        .news‑item{
+            padding:14px 0;
+            border‑bottom:1px #eee dashed;
+            display:flex;
+            justify‑content:space‑between;
+        }
+        .news‑item a{
+            text‑decoration:none;
+            color:#333;
+        }
+        .news‑item a:hover{
+            color:#0F5499;
+        }
+        .news‑item .date{
+            color:#999;
+            font‑size:14px;
+        }
+
+        /* 页脚 */
+        footer{
+            background:#112236;
+            color:#bbb;
+            padding:45px 5%;
+            margin‑top:40px;
+        }
+        .footer‑inner{
+            display:grid;
+            grid‑template‑columns:repeat(3,1fr);
+            gap:30px;
+        }
+        .footer‑block h4{
+            color:#fff;
+            margin‑bottom:18px;
+            font‑size:17px;
+        }
+        .footer‑block p{
+            line‑height:1.9;
+            font‑size:14px;
+        }
+        .copyright{
+            text‑align:center;
+            padding‑top:30px;
+            margin‑top:30px;
+            border‑top:1px solid #273b52;
+            font‑size:14px;
+        }
+    </style>
+</head>
+<body>
+    <!--顶部联系栏-->
+    <div class="top-bar">
+        <div>欢迎访问XX科技企业官网</div>
+        <div>联系电话：029‑8888‑6666</div>
+    </div>
+
+    <!--导航栏-->
+    <div class="header-nav">
+        <div class="logo">XX科技</div>
+        <div class="nav-menu">
+            <a href="#" class="active">首页</a>
+            <a href="#">关于我们</a>
+            <a href="#">服务项目</a>
+            <a href="#">项目案例</a>
+            <a href="#">新闻资讯</a>
+            <a href="#">联系我们</a>
+        </div>
+    </div>
+
+    <!--头部轮播大图-->
+    <div class="banner">
+        <h1>专注企业IT技术服务</h1>
+        <p>服务器运维｜网络集成｜安全加固解决方案</p>
+    </div>
+
+    <!--关于我们-->
+    <div class="container">
+        <div class="section-title">
+            <h2>关于我们</h2>
+            <div class="line"></div>
+        </div>
+        <div class="about-wrap">
+            <div class="about-text">
+                <h3>公司简介</h3>
+                <p>XX科技是一家专注企业信息化建设的技术服务商，致力于为中小企业提供服务器部署、网络实施、安全运维全套解决方案。</p>
+                <p>拥有多年项目实施经验，服务覆盖政府、制造、教育多个行业，坚持稳定、安全、高效的服务理念。</p>
+            </div>
+            <div class="about-bg"></div>
+        </div>
+    </div>
+
+    <!--服务项目-->
+    <div class="container">
+        <div class="section-title">
+            <h2>服务项目</h2>
+            <div class="line"></div>
+        </div>
+        <div class="service-list">
+            <div class="service-item">
+                <h4>服务器部署</h4>
+                <p>CentOS、Windows服务器搭建，YUM源、Web服务部署</p>
+            </div>
+            <div class="service-item">
+                <h4>网络集成</h4>
+                <p>交换机VLAN、路由、防火墙策略，整网规划调试</p>
+            </div>
+            <div class="service-item">
+                <h4>安全加固</h4>
+                <p>账号权限、防火墙、日志审计，漏洞基线检查</p>
+            </div>
+            <div class="service-item">
+                <h4>技术运维外包</h4>
+                <p>7×12小时技术支持，故障排查，定期巡检服务</p>
+            </div>
+        </div>
+    </div>
+
+    <!--项目案例-->
+    <div class="container">
+        <div class="section-title">
+            <h2>项目案例</h2>
+            <div class="line"></div>
+        </div>
+        <div class="case-list">
+            <div class="case-item">
+                <div class="case-img"></div>
+                <div class="case-info">
+                    <h4>企业内网平台建设</h4>
+                    <p>内网隔离环境服务器集群部署项目</p>
+                </div>
+            </div>
+            <div class="case-item">
+                <div class="case-img"></div>
+                <div class="case-info">
+                    <h4>园区网络改造工程</h4>
+                    <p>多部门VLAN划分与安全策略落地</p>
+                </div>
+            </div>
+            <div class="case-item">
+                <div class="case-img"></div>
+                <div class="case-info">
+                    <h4>服务器安全基线加固</h4>
+                    <p>多台Linux系统安全整改加固项目</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--新闻资讯-->
+    <div class="container">
+        <div class="section-title">
+            <h2>新闻资讯</h2>
+            <div class="line"></div>
+        </div>
+        <div class="news-wrap">
+            <div class="news-left">
+                <div class="news-item">
+                    <a href="#">企业服务器日常运维注意要点</a>
+                    <span class="date">2026‑10‑20</span>
+                </div>
+                <div class="news-item">
+                    <a href="#">防火墙策略最佳实践分享</a>
+                    <span class="date">2026‑10‑12</span>
+                </div>
+                <div class="news-item">
+                    <a href="#">Linux系统日志审计实操讲解</a>
+                    <span class="date">2026‑09‑28</span>
+                </div>
+            </div>
+            <div class="news-right">
+                <div class="news-item">
+                    <a href="#">内网离线YUM源搭建教程</a>
+                    <span class="date">2026‑09‑15</span>
+                </div>
+                <div class="news-item">
+                    <a href="#">网络项目实施流程规范说明</a>
+                    <span class="date">2026‑09‑03</span>
+                </div>
+                <div class="news-item">
+                    <a href="#">关于我们新的技术服务上线通知</a>
+                    <span class="date">2026‑08‑22</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--页脚联系信息-->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-block">
+                <h4>关于我们</h4>
+                <p>XX科技有限公司<br>专注企业IT基础设施技术服务</p>
+            </div>
+            <div class="footer-block">
+                <h4>快速链接</h4>
+                <p>首页｜关于我们｜服务项目<br>项目案例｜新闻资讯</p>
+            </div>
+            <div class="footer-block">
+                <h4>联系我们</h4>
+                <p>电话：029‑8888‑6666<br>地址：西安市高新区产业园<br>邮箱：service@demo.com</p>
+            </div>
+        </div>
+        <div class="copyright">©2026 XX科技有限公司 版权所有</div>
+    </footer>
+</body>
+</html>
